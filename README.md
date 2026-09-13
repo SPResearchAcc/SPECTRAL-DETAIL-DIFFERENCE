@@ -1,4 +1,4 @@
-# Spectral-Detail Difference - Replay Attack Detection
+# Spectral-Detail Difference - ICASSP 2027 Submission
 
 Code for **"Spectral-Detail Difference: A Vocoder-Free Feature for Replay Attack
 Detection"** (Shiven Patel, Independent Researcher).
