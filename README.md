@@ -149,7 +149,7 @@ Row **3R** is `run_world_baseline_multiseed.py` as shipped
 The last row is the same run as Table 1's R = 400.
 
 **Table 3.** `run_timing_benchmark.py`makes it. 10,000 utterances,
-extraction only, after a warm-up. Use an idle machine. The published timings are from a
+extraction only, after a warm-up. Use an idle machine with ideally no other tasks competing for CPU. The published timings are from a
 Dell G16 13th Gen Intel Core i7-13650HX (2.60 GHz), 32 GB RAM, RTX 4060 and Intel UHD
 Graphics. Extraction is CPU-only, neither GPU is touched.
 
