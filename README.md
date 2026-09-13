@@ -60,15 +60,37 @@ pip install torch==2.6.0+cu118 torchaudio==2.6.0+cu118 --index-url https://downl
 |---|---|
 | [**ASVspoof 2019 PA**](https://datashare.ed.ac.uk/items/31074a11-b6f6-4e92-a4ad-07093f8c0c45) - download PA.zip only and setup train + dev protocols and FLAC | Training, bona fide only |
 | [**ASVspoof 2021 PA evaluation**](https://zenodo.org/records/4834716) - parts 00-06 | Feature extraction and scoring |
-| *(already shipped)* **ASVspoof 2021 evaluation package** - `keys/PA/` | Official labels |
+| [**`trial_metadata.txt`**](https://drive.google.com/file/d/1ISVTFlpLudCPdx9ECDJoZ9mmJtR_lBYL/view?usp=sharing) - 57 MB, hosted off-repo | Official labels |
+| *(already shipped)* **t-DCF coefficients** - `keys/PA/PA-C012-*.npy` | Scoring |
 
 Download the first two. Lay out each 2021 part as
 `<data_root>/ASVspoof2021_PA_eval_part{NN}/ASVspoof2021_PA_eval/`, holding its `flac/`
 folder. 
 
-The third is already here as the CM trial metadata, the t-DCF coefficient files
-`PA-C012-*.npy`, and the package's own `README.txt`. `keys/PA/CM/trial_metadata.txt` is
-the package's file. Read the trial count the scorers
+The t-DCF coefficient files `PA-C012-*.npy` and the evaluation package's own `README.txt`
+are already in `keys/PA/`.
+
+### `trial_metadata.txt`
+
+The evaluation package's CM trial metadata is 57 MB, over GitHub's 25 MB web upload limit,
+so it is hosted separately. Its folder `keys/PA/CM/` is empty and therefore not in the
+repository - git does not track empty folders - so create it first:
+
+```bash
+mkdir keys\PA\CM
+```
+
+Then download [**`trial_metadata.txt`**](https://drive.google.com/file/d/1ISVTFlpLudCPdx9ECDJoZ9mmJtR_lBYL/view?usp=sharing)
+into it, so the path reads `keys/PA/CM/trial_metadata.txt`. Or do both from the command
+line:
+
+```bash
+mkdir keys\PA\CM
+pip install gdown
+gdown 1ISVTFlpLudCPdx9ECDJoZ9mmJtR_lBYL -O keys/PA/CM/trial_metadata.txt
+```
+
+`check_paths.py` flags this path if the file is absent. Read the trial count the scorers
 print: on `eval` it must be 721,332.
 
 Missing FLAC files are skipped silently - check the counts printed at startup.
@@ -227,7 +249,7 @@ Back-end control : row 3R under each set of back-end settings, three seeds each.
 | `multiseed_runner.py` | The multi-seed orchestration both runners above share. |
 | `spectral_common.py` | front-end helpers shared by the two experiment scripts. |
 | `asvspoof_data.py` | ASVspoof PA protocol parsing. |
-| `keys/PA/` | The evaluation package's CM trial metadata and t-DCF coefficient files |
+| `keys/PA/` | The evaluation package's t-DCF coefficient files. `keys/PA/CM/trial_metadata.txt` is downloaded separately - Section 2. |
 
 
 
