@@ -1,0 +1,41 @@
+{
+  "roots": {
+    "asvspoof2019_root": "/path/to/ASVspoof2019_PA",
+    "data_root": "/path/to/ASVspoof2021_PA",
+    "output_root": "/path/to/outputs"
+  },
+  "asvspoof2019_pa": {
+    "train_protocol": "{asvspoof2019_root}/ASVspoof2019_PA_cm_protocols/ASVspoof2019.PA.cm.train.trn.txt",
+    "train_flac": "{asvspoof2019_root}/ASVspoof2019_PA_train/flac",
+    "dev_protocol": "{asvspoof2019_root}/ASVspoof2019_PA_cm_protocols/ASVspoof2019.PA.cm.dev.trl.txt",
+    "dev_flac": "{asvspoof2019_root}/ASVspoof2019_PA_dev/flac"
+  },
+  "asvspoof2021_pa_eval": {
+    "base_dir": "{data_root}",
+    "parts": [
+      "00",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ],
+    "part_subdir": "ASVspoof2021_PA_eval_part{part}/ASVspoof2021_PA_eval",
+    "flac_subdir": "flac"
+  },
+  "official_eval_package": {
+    "trial_metadata": "keys/PA/CM/trial_metadata.txt",
+    "c012_dir": "keys/PA"
+  },
+  "output_dirs": {
+    "run_spectral_detail.py": "{output_root}/spectral_detail",
+    "run_fine_only_ablation.py": "{output_root}/fine_only_ablation",
+    "run_timing_benchmark.py": "{output_root}/timing_benchmark",
+    "run_world_baseline_multiseed.py": "{output_root}/world_baseline"
+  },
+  "score_txt_dir": "{output_root}/score_txt",
+  "scoring": {
+    "score_file": "PUT_A_SCORE_TXT_HERE_IN_PATHS_JSON.txt"
+  }
+}
