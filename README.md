@@ -30,9 +30,9 @@ python run_fine_only_ablation_multiseed.py   # Table 2 no-subtraction control te
 python run_world_baseline_multiseed.py       # Table 1, row 3R 
 python run_timing_benchmark.py               # Table 3
 
-
-python score_pooled_eer.py       <that .txt>
-python score_pooled_min_tdcf.py  <that .txt>
+# score files can be passed as arguments or put in scorer.score_file of paths.json 
+python score_pooled_eer.py       <score.txt>
+python score_pooled_min_tdcf.py  <score.txt>
 ```
 ---
 
