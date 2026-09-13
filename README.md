@@ -72,9 +72,7 @@ are already in `keys/PA/`.
 
 ### `trial_metadata.txt`
 
-The evaluation package's CM trial metadata is 57 MB, over GitHub's 25 MB web upload limit,
-so it is hosted separately. Its folder `keys/PA/CM/` is empty and therefore not in the
-repository - git does not track empty folders - so create it first:
+The evaluation package's CM trial metadata needs to positioned in its folder `keys/PA/CM/`.
 
 ```bash
 mkdir keys\PA\CM
